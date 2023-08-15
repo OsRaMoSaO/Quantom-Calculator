@@ -46,6 +46,7 @@
             // 
             // EnterButton
             // 
+            EnterButton.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             EnterButton.Location = new Point(70, 109);
             EnterButton.Name = "EnterButton";
             EnterButton.Size = new Size(147, 36);
@@ -57,25 +58,28 @@
             // TextBox
             // 
             TextBox.AutoSize = true;
+            TextBox.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             TextBox.Location = new Point(125, 10);
             TextBox.Name = "TextBox";
-            TextBox.Size = new Size(35, 15);
+            TextBox.Size = new Size(37, 17);
             TextBox.TabIndex = 1;
             TextBox.Text = "Hello";
             TextBox.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Num1Box
             // 
+            Num1Box.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Num1Box.Location = new Point(17, 51);
             Num1Box.Name = "Num1Box";
-            Num1Box.Size = new Size(100, 23);
+            Num1Box.Size = new Size(100, 24);
             Num1Box.TabIndex = 2;
             // 
             // Num2Box
             // 
+            Num2Box.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Num2Box.Location = new Point(170, 51);
             Num2Box.Name = "Num2Box";
-            Num2Box.Size = new Size(100, 23);
+            Num2Box.Size = new Size(100, 24);
             Num2Box.TabIndex = 3;
             // 
             // progressBar
@@ -90,18 +94,20 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(34, 33);
             label1.Name = "label1";
-            label1.Size = new Size(60, 15);
+            label1.Size = new Size(59, 17);
             label1.TabIndex = 5;
             label1.Text = "Number 1";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(194, 33);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(61, 17);
             label2.TabIndex = 6;
             label2.Text = "Number 2";
             // 
@@ -125,11 +131,12 @@
             // comboBox
             // 
             comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox.Font = new Font("Comic Sans MS", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox.FormattingEnabled = true;
             comboBox.Items.AddRange(new object[] { "+", "-", "*", "/" });
             comboBox.Location = new Point(125, 51);
             comboBox.Name = "comboBox";
-            comboBox.Size = new Size(37, 23);
+            comboBox.Size = new Size(37, 25);
             comboBox.TabIndex = 7;
             // 
             // Main
@@ -146,7 +153,6 @@
             Controls.Add(Num1Box);
             Controls.Add(TextBox);
             Controls.Add(EnterButton);
-            Cursor = Cursors.Arrow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
             Text = "Quantum Calculator";
