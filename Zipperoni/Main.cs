@@ -29,7 +29,7 @@ namespace Zipperoni
         private async void button1_Click(object sender, EventArgs e)
         {
             SoundPlayer soundBull = new SoundPlayer(Properties.Resources.bullets);
-            
+
             SetStartup();
 
             Random rnd = new Random();
@@ -62,13 +62,44 @@ namespace Zipperoni
             }
 
 
-            int result = num1 + num2;
+
+            if (comboBox.Text == "")
+            {
+                System.Media.SystemSounds.Exclamation.Play();
+                soundBull.Play();
+                MessageBox.Show("No operator selected", "Error!");
+                return;
+            }
+
+
+            int result = 0;
+
+            if (comboBox.Text == "+")
+            {
+                result = num1 + num2;
+            }
+            if (comboBox.Text == "-")
+            {
+                result = num1 - num2;
+            }
+            if (comboBox.Text == "/")
+            {
+                result = num1 / num2;
+            }
+            if (comboBox.Text == "*")
+            {
+                result = num1 * num2;
+            }
+
+
 
             TextBox.Text = "Calcuating...";
+            EnterButton.Cursor = Cursors.WaitCursor;
 
             EnterButton.Enabled = false;
             Num1Box.Enabled = false;
             Num2Box.Enabled = false;
+            comboBox.Enabled = false;
 
             SoundPlayer soundNick = new SoundPlayer(Properties.Resources.intro);
             SoundPlayer soundWin = new SoundPlayer(Properties.Resources.Usher);
@@ -77,7 +108,7 @@ namespace Zipperoni
 
             for (int i = 0; i < 100; i++)
             {
-                int time = rnd.Next(250, 1500);
+                int time = rnd.Next(125, 1250);
                 await Task.Delay(time);
                 progressBar.Value = i;
                 System.Media.SystemSounds.Beep.Play();
@@ -91,7 +122,9 @@ namespace Zipperoni
             EnterButton.Enabled = true;
             Num1Box.Enabled = true;
             Num2Box.Enabled = true;
+            comboBox.Enabled = true;
 
+            EnterButton.Cursor = Cursors.Arrow;
             TextBox.Text = result.ToString();
             System.Media.SystemSounds.Exclamation.Play();
             MessageBox.Show("Your answer is: " + result + "!");

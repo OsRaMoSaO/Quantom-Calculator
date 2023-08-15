@@ -40,6 +40,7 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             contextMenuStrip2 = new ContextMenuStrip(components);
             toolStripTextBox1 = new ToolStripTextBox();
+            comboBox = new ComboBox();
             contextMenuStrip2.SuspendLayout();
             SuspendLayout();
             // 
@@ -121,12 +122,23 @@
             toolStripTextBox1.Size = new Size(100, 23);
             toolStripTextBox1.Click += toolStripTextBox1_Click;
             // 
+            // comboBox
+            // 
+            comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox.FormattingEnabled = true;
+            comboBox.Items.AddRange(new object[] { "+", "-", "*", "/" });
+            comboBox.Location = new Point(125, 51);
+            comboBox.Name = "comboBox";
+            comboBox.Size = new Size(37, 23);
+            comboBox.TabIndex = 7;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(295, 182);
+            Controls.Add(comboBox);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(progressBar);
@@ -134,6 +146,7 @@
             Controls.Add(Num1Box);
             Controls.Add(TextBox);
             Controls.Add(EnterButton);
+            Cursor = Cursors.Arrow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Main";
             Text = "Quantum Calculator";
@@ -156,5 +169,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private ContextMenuStrip contextMenuStrip2;
         private ToolStripTextBox toolStripTextBox1;
+        private ComboBox comboBox;
     }
 }
